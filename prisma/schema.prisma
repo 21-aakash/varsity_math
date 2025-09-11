@@ -1,9 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
-  output   = "../app/generated/prisma"
 }
 
 datasource db {
@@ -11,11 +7,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Enquiry {
-  id        Int      @id @default(autoincrement())
+model User {
+  id        Int        @id @default(autoincrement())
   name      String
-  email     String
+  email     String     @unique
   phone     String
-  message   String
-  createdAt DateTime @default(now())
+  password  String
+  createdAt DateTime   @default(now())
+
+  admission Admission? 
+}
+
+model Admission {
+  id            Int      @id @default(autoincrement())
+  userId        Int      @unique // each user only 1 admission
+  user          User     @relation(fields: [userId], references: [id])
+
+  class         String
+  board         String
+  medium        String
+  school        String
+  admissionDate DateTime
+  profilePic    String?
+  paymentProof  String?
+  admission     Boolean  @default(false)
+
+  createdAt     DateTime @default(now())
 }
