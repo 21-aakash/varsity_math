@@ -4,6 +4,8 @@
 @import "slick-carousel/slick/slick-theme.css";
 
 
+
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -132,6 +134,16 @@
   display: inline-block;
   min-width: 100%;
   animation: marquee 12s linear infinite;
+}
+
+
+
+
+ 
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f9fafb;
 }
 
 
