@@ -2,8 +2,9 @@ import CourseCard from "@/components/CourseCard";
 
 export default function Courses() {
   return (
-    <section className="w-full px-6 py-12 bg-gray-50">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section className="w-full px-12 py-24 bg-gray-50 ">
+      
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
         
         {/* Foundation Course */}
         <CourseCard

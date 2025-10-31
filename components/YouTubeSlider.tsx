@@ -1,128 +1,3 @@
-// "use client";
-
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
-// import { ChevronLeft, ChevronRight } from "lucide-react";
-
-// interface Video {
-//   id: string;
-//   title: string;
-//   thumbnail: string;
-// }
-
-// interface YouTubeApiSnippet {
-//   title: string;
-//   thumbnails: {
-//     medium: {
-//       url: string;
-//     };
-//   };
-// }
-
-// interface YouTubeApiItem {
-//   id: { videoId: string };
-//   snippet: YouTubeApiSnippet;
-// }
-
-// const YouTubeSlider = () => {
-//   const [videos, setVideos] = useState<Video[]>([]);
-//   const [currentIndex, setCurrentIndex] = useState(0);
-
-//   const API_KEY = "AIzaSyAlENY77RdoQEK_dR1H41VtRqZzeukqSbM"; // replace with your API key
-//   const CHANNEL_ID = "UCqu5x5i3wvkmR_ES6aMgRTw"; // VarsityMath channel ID
-
-//   useEffect(() => {
-//     const fetchVideos = async () => {
-//       try {
-//         const res = await axios.get(
-//           `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=10`
-//         );
-//         const data = res.data.items.map((item: YouTubeApiItem) => ({
-//           id: item.id.videoId,
-//           title: item.snippet.title,
-//           thumbnail: item.snippet.thumbnails.medium.url,
-//         }));
-//         setVideos(data);
-//       } catch (err) {
-//         console.error("YouTube Fetch Error:", err);
-//       }
-//     };
-
-//     fetchVideos();
-//   }, []);
-
-//   const itemsPerPage = typeof window !== "undefined" && window.innerWidth < 768 ? 1 : 3;
-
-//   const nextSlide = () => {
-//     if (currentIndex < videos.length - itemsPerPage) {
-//       setCurrentIndex((prev) => prev + 1);
-//     }
-//   };
-
-//   const prevSlide = () => {
-//     if (currentIndex > 0) {
-//       setCurrentIndex((prev) => prev - 1);
-//     }
-//   };
-
-//   return (
-//     <div className="w-full px-4 py-6 relative">
-//       <h2 className="text-xl font-bold mb-4">Latest Videos</h2>
-
-//       {/* Slider container */}
-//       <div className="overflow-hidden">
-//         <div
-//           className="flex transition-transform duration-500"
-//           style={{ transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` }}
-//         >
-//           {videos.map((video) => (
-//             <div
-//               key={video.id}
-//               className={`px-2 flex-shrink-0`}
-//               style={{ width: `${100 / itemsPerPage}%` }}
-//             >
-//               <a
-//                 href={`https://www.youtube.com/watch?v=${video.id}`}
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//               >
-//                 <div className="bg-white rounded-xl shadow-md overflow-hidden">
-//                   <img
-//                     src={video.thumbnail}
-//                     alt={video.title}
-//                     className="w-full object-cover"
-//                   />
-//                   <div className="p-2 text-sm font-medium line-clamp-2">
-//                     {video.title}
-//                   </div>
-//                 </div>
-//               </a>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-
-//       {/* Arrows */}
-//       <button
-//         onClick={prevSlide}
-//         disabled={currentIndex === 0}
-//         className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow disabled:opacity-50"
-//       >
-//         <ChevronLeft />
-//       </button>
-//       <button
-//         onClick={nextSlide}
-//         disabled={currentIndex >= videos.length - itemsPerPage}
-//         className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow disabled:opacity-50"
-//       >
-//         <ChevronRight />
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default YouTubeSlider;
-
 
 "use client";
 
@@ -205,15 +80,18 @@ const YouTubeSlider = () => {
    
 
 
-<div className="w-full px-4 py-8 relative bg-slate-200">
-  <h2 className="flex items-center text-2xl font-bold mb-6 text-gray-800">
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Youtube_shorts_icon.svg/824px-Youtube_shorts_icon.svg.png"
-      alt="YouTube Shorts"
-      className="w-8 h-8  object-contain"
-    />
-    <span className="truncate">Latest Videos</span>
-  </h2>
+<div className="w-full px-4 py-8 relative bg-slate-100 ">
+
+<h2 className="flex items-center justify-center gap-3 text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-gray-100 mb-8 relative">
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Youtube_shorts_icon.svg/824px-Youtube_shorts_icon.svg.png"
+    alt="YouTube Shorts"
+    className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+  />
+  <span className="truncate">Latest Videos</span>
+  <span className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 sm:w-24 h-1 bg-orange-500 rounded-full"></span>
+</h2>
+
 
 
 

@@ -1,40 +1,50 @@
 // app/page.tsx
-import './globals.css';
-import Hero from '@/components/Hero';
-import Courses from '@/components/Courses';
-import Facilities from '@/components/Facilities';
-import Gallery from '@/components/Gallery';
-import FeesTable from '@/components/FeesTable';
-import EnquiryForm from '@/components/EnquiryForm';
-import Footer from '@/components/Footer';
-import FloatingChatButton from '@/components/FloatingChatButton';
-import Navbar from '@/components/Navbar';
-import Testimonials from '@/components/Testimonials';
-import Achievers from '@/components/Achievers';
-import YouTubeSlider from '@/components/YouTubeSlider';
-import AdmissionBanner from '@/components/AdmissionBanner';
+import "@/app/globals.css";
+
+import Hero from "@/components/Hero";
+import Courses from "@/components/Courses";
+import Mission from "@/components/MissionSection";
+import Socials from "@/components/Socials";
+import FacilitiesCarousel from "@/components/FacilitiesCarousel";
+import EnquiryForm from "@/components/EnquiryForm";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import Faculty from "@/components/Faculty";
+import Achievers from "@/components/Achievers";
+import YouTubeSlider from "@/components/YouTubeSlider";
+import ResultsStats from "@/components/ResultsStats";
+
 export default function Home() {
   return (
     <>
       <Navbar />
-       
-      <main > 
-       
-         <Hero />
-       
-        <Achievers/>
+
+      <main>
+
+
+        <Hero />
+
+        <Socials />
+
+        <Achievers />
+
+
+  <ResultsStats />
+
+
+
         <Courses />
 
- <YouTubeSlider/>
+      <Faculty/>
 
+<Mission />
+        <YouTubeSlider />
 
-        <Facilities />
-        <Gallery />
-      
-      
+        <FacilitiesCarousel />
+
         <EnquiryForm />
+        
         <Footer />
-      
       </main>
     </>
   );
